@@ -1,4 +1,15 @@
-Shared-CE
+Grunt Starter Project
 =========
 
-Shared resources and code for the CE
+This solution will contain the grunt package files and necessary configurations.
+
+## Installation    
+  
+`npm install ...`
+
+##Solution Structure
+
+- Folder 
+ - inside
+ - etc
+ - assets
