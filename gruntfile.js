@@ -51,7 +51,7 @@ module.exports = function(grunt){
                     jQuery: true
                 }
             },
-            beforeconcat: ['dev/js/*.js']
+            beforeconcat: ['dev/assets/js/*.js']
         },
 
         /** 
@@ -70,8 +70,8 @@ module.exports = function(grunt){
             },
 
             prod: {
-                src:['dev/js/libs/*.js', 'dev/js/*.js'],
-                dest: 'prod/js/production.min.js'
+                src:['dev/assets/js/libs/*.js', 'dev/assets/js/*.js'],
+                dest: 'prod/assets/js/production.min.js'
             }
         },
 
@@ -82,8 +82,8 @@ module.exports = function(grunt){
 
         uglify: {
             prod: {
-                src: 'prod/js/production.min.js',
-                dest: 'prod/js/production.min.js'
+                src: 'prod/assets/js/production.min.js',
+                dest: 'prod/assets/js/production.min.js'
             }
         },
 
@@ -98,7 +98,7 @@ module.exports = function(grunt){
                     style: 'expanded' // compressed
                 },
                 files: {
-                    'dev/css/global.css': 'dev/css/global.scss'
+                    'dev/assets/css/global.css': 'dev/assets/sass/global.scss'
                 }
             }
         },
@@ -111,9 +111,9 @@ module.exports = function(grunt){
         cssmin: {
             prod: {
                 expand: true,
-                cwd: 'dev/css/',
+                cwd: 'dev/assets/css/',
                 src: ['*.css', '!*.min.css'],
-                dest: 'prod/css/',
+                dest: 'prod/assets/css/',
                 ext: '.min.css'                
             }
         },
@@ -127,7 +127,7 @@ module.exports = function(grunt){
             dist: {
                 expand: true,
                 cwd: 'dev',
-                src: [ '**/*.css' ],
+                src: [ 'assets/css/*.css' ],
                 dest: 'dev'
             }
         },
@@ -141,8 +141,8 @@ module.exports = function(grunt){
             prod: {
                 files: [{
                     expand: true,
-                    cwd: 'dev/images/',
-                    src: ['**/*.{png,jpg,gif}'],
+                    cwd: 'dev/assets/images/',
+                    src: [images/*.{png,jpg,gif}'],
                     dest: 'prod/images/'
                 }]
             }
@@ -173,14 +173,14 @@ module.exports = function(grunt){
                 tasks: ['htmlhint', 'copy:prod']
             },
             css: {
-                files: ['dev/css/global.scss'],
+                files: ['dev/assets/sass/global.scss'],
                 tasks: ['sass', 'autoprefixer', 'cssmin:prod'],
                 options: {
                     spawn: false,
                 },  
             },
             js: {
-                files: ['dev/js/*.js'],
+                files: ['dev/assets/js/*.js'],
                 tasks: ['jshint', 'concat', 'uglify'],
                 options: {
                     spawn: false,
