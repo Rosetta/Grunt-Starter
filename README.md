@@ -21,6 +21,10 @@ Go to terminal type `grunt -version`
   
 `npm install ...`
 
+This will update your dependencies and install modules we are using.
+
+Note: these are not included in source control, in fact they are intentionally excluded using gitignore file
+
 
 
 ## Solution Structure
