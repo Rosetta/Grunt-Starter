@@ -1,0 +1,68 @@
+$backgroundColor: #eee;
+$spacing: 2rem;
+$links: #35a8ff;
+
+@import "libs/normalize";
+@import "libs/owl.carousel";
+@import "owl.theme";
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: $backgroundColor;
+  padding: $spacing;
+}
+body {
+  padding: $spacing;
+  background: white;
+}
+
+a {
+  color: $links;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: darken($links, 25%);
+  }
+}
+
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3em;
+  color: red; 
+}
+
+h2 {
+  font-size: 3em;
+}
+
+footer {
+  text-align: center;
+  width: 60%;
+  margin:0 auto;
+}
+.moving-box {
+  background: $links;
+  width: 100px;
+  height: 100px;
+  animation: swing 3s ease alternate infinite;
+}
+
+// Example of ignoring prefixes
+@keyframes swing {
+  100% {
+    transform: translateX(400px);
+  }
+}
